@@ -204,7 +204,7 @@ Remember your Virtual Network **ID** or Virtual Network **NAME**.
 
 Schema:
 
-[OpenNebulatemplate](!https://sites.google.com/site/manuparra/home/opennebulatemplate.png)
+![OpenNebulatemplate](https://sites.google.com/site/manuparra/home/opennebulatemplate.png)
 
 We use ``onetemplate`` with this syntax:
 
@@ -291,7 +291,7 @@ ID USER     GROUP    NAME            STAT UCPU    UMEM HOST             TIME
 In the STAT column we have the current state. RUNNING = RUN
 And information about Memory, HOST, etc.
 
-### How to connect  (SSH) to the created Virtual Machine
+### How to connect (SSH) to the created Virtual Machine
 
 
 Check the ID of your Virtual Machine:
@@ -318,14 +318,14 @@ The part that interests us of the details is to know that IP has been assigned t
 CONTEXT=[
   DISK_ID="1",
   ETH0_DNS="150.214.191.10",
-  ETH0_GATEWAY="192.168.12.1",
+  ETH0_GATEWAY="192.168.10.1",
   ETH0_IP="192.168.12.148",
   ETH0_MAC="02:00:c0:a8:0c:94",
   NETWORK=“YES",
   ....
 ```
 
-So, our Virtual Machine IP to connect with SSH is: ``192.168.12.148``
+So, our Virtual Machine IP to connect with SSH is: ``192.168.10.148``
 
 We try to connect to the Virtual Machine:
 
@@ -333,19 +333,23 @@ We try to connect to the Virtual Machine:
 ssh root@192.168.12.148
 ```
 
+NOTE: It doesn't need password. WHY ?
+
 Verify if you are connected to Internet:
 
 ```
 ping -c2 google.com
 ```
 
-## Manage Virtual Machine on SunStone Website
+## HOW to Manage Virtual Machines Platform from SunStone Web Application
 
 Go to: http://docker.ugr.es:9869/ and follow the next steps:
 
 - Connect to docker server ugr: ``ssh manuparra@.....``
 - Execute: ``cat .one/one_auth`` it will show your SunStone credentials in this format: ``<user>:<password>`` , for example: ``manuparra:7374j31g74hd7234``
 - Copy the corresponding part of password and paste http://docker.ugr.es:9869/ login and password.
+
+
 
 
 
