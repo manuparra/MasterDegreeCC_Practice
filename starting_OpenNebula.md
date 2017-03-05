@@ -39,7 +39,13 @@ Firstly try to access to the docker ugr server:
 ssh manuparra@docker....
 ```
 
-Change `manuparra` with your `user login`.
+Change `manuparra` with your `user login`: 
+
+```
+ssh mccXXXXXXX@docker....
+```
+
+Use your previously changed password, when asked.
 
 
 **OpenNebula commands**:
@@ -142,6 +148,12 @@ for example:
 oneuser login manuparra --ssh --force
 ```
 
+or in your case:
+
+```
+oneuser login mccXXXXXX --ssh --force
+```
+
 If this command works fine, you are allow to use and connect with OpenNebula.
 
 ### List available images on our OpenNebula system
@@ -179,16 +191,20 @@ and look forward for your Virtual Network
 
 ```
  ID USER            GROUP        NAME                CLUSTER    BRIDGE   LEASES
-   0 oneadmin        oneadmin     private             -          br0           0
-   1 patriciajimeno  users        private1            -          br0           0
-   2 alejandroalonso users        alejandroalonso_vne -          br0           0
-   3 arantzazulopez  users        arantzazulopez_vnet -          br0           0
+   0 oneadmin        oneadmin     private_vnet             -     br0           0
+   1 usertest        users        private1_vnet            -     br0           0
+   2 openstack       users        openstack_vnet           -     br0           0
+   3 datavisuali     users        datavisuali_vnet         -      br0           0
    ...
 ```
 
 Remember your Virtual Network **ID** or Virtual Network **NAME**.
 
 ### Create a Virtual Machine instance template
+
+Schema:
+
+[OpenNebulatemplate](!https://sites.google.com/site/manuparra/home/opennebulatemplate.png)
 
 We use ``onetemplate`` with this syntax:
 
