@@ -9,7 +9,7 @@ Distributed Computational Intelligence and Time Series Lab
 University of Granada
 
 Table of Contents
-=================
+==================
 
    * [Starting with OpenNebula](#starting-with-opennebula)
       * [First steps with OpenNebula](#first-steps-with-opennebula)
