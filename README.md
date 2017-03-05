@@ -215,3 +215,7 @@ Go to: [First steps with OpenNebula](./starting_OpenNebula.md)
 # Starting with DOCKER
 
 Go to: [First steps with Docker Containers](./starting_docker.md)
+
+# Starting with HDFS
+
+Go to: [First steps with HDFS](./starting_hdfs.md)
