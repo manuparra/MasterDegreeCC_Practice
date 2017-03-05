@@ -14,7 +14,8 @@ Table of Contents
       * [Connecting to Docker Server UGR](#connecting-to-docker-server-ugr)
       * [Connecting to Docker Containers](#connecting-to-docker-containers)
       * [Infrastructure](#infrastructure)
-      * [Connecting and starting with docker server and docker system](#connecting-and-starting-with-docker-server-and-docker-system)
+      * [Docker Cluster port assignment for VIRTUAL MACHINES](# On Docker Cluster this is the account port assignment)
+      * [Hadoop Cluster port assignment for DOCKER CONTAINERS](# On Hadoop Cluster this is the account port assignment for DOCKER CONTAINERS)
    
 
 # Environment of the practice
@@ -61,7 +62,7 @@ As you see, inside docker you will work with VIRTUAL MACHINES and inside hadoopy
 
 *IMPORTANT*: Ports assignment
 
-### On Docker Cluster this is the account port assignment:
+### On Docker Cluster this is the account port assignment
 
 *Account ending in ....XXX*
 
@@ -142,7 +143,7 @@ ACCOUNT: ...575
 - docker cluster port 15097 go to 192.168.10.97 port 80
 
 
-### On Hadoop Cluster this is the account port assignment for DOCKER CONTAINERS:
+### On Hadoop Cluster this is the account port assignment for DOCKER CONTAINERS
 
 *Account ending in ....XXX*
 
