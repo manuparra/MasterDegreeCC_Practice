@@ -16,7 +16,9 @@ Table of Contents
       * [Infrastructure](#infrastructure)
       * [Docker Cluster port assignment for VIRTUAL MACHINES](# On Docker Cluster this is the account port assignment)
       * [Hadoop Cluster port assignment for DOCKER CONTAINERS](# On Hadoop Cluster this is the account port assignment for DOCKER CONTAINERS)
-   
+
+   * [2. Starting with OPENNEBULA](#starting-with-opennebula)
+   * [3. Starting with DOCKER](#starting-with-docker)
 
 # Environment of the practice
 
@@ -205,3 +207,10 @@ ACCOUNT: ...575
 - 5 ports: hadoop cluster port 14090-14094 to internal 14090-14094
 
 
+# Starting with OPENNEBULA
+
+Go to: [First steps with OpenNebula](./starting_OpenNebula.md)
+
+# Starting with DOCKER
+
+Go to: [First steps with Docker Containers](./starting_docker.md)
