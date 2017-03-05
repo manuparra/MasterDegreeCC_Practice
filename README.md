@@ -144,5 +144,63 @@ ACCOUNT: ...575
 
 ### On Hadoop Cluster this is the account port assignment for DOCKER CONTAINERS:
 
+*Account ending in ....XXX*
+
+ACCOUNT: ....998 
+- 5 ports: hadoop cluster port 14000-14004 to internal 14000-14004
+
+ACCOUNT: ....895 
+- 5 ports: hadoop cluster port 14005-14009 to internal 14005-14009
+
+ACCOUNT: ....731 
+- 5 ports: hadoop cluster port 14010-14014 to internal 14010-14014
+
+ACCOUNT: ....571 
+- 5 ports: hadoop cluster port 14015-14019 to internal 14015-14019
+
+ACCOUNT: ....287 
+- 5 ports: hadoop cluster port 14020-14024 to internal 14020-14024
+
+ACCOUNT: ...799 
+- 5 ports: hadoop cluster port 14025-14029 to internal 14025-14029
+
+ACCOUNT: ...176 
+- 5 ports: hadoop cluster port 14030-14034 to internal 14030-14034
+
+ACCOUNT: ...687 
+- 5 ports: hadoop cluster port 14035-14039 to internal 14035-14039
+
+ACCOUNT: ...432 
+- 5 ports: hadoop cluster port 14040-14044 to internal 14040-14044
+
+ACCOUNT: ...810 
+- 5 ports: hadoop cluster port 14045-14049 to internal 14045-14049
+
+ACCOUNT: ...323 
+- 5 ports: hadoop cluster port 14050-14054 to internal 14050-14054
+
+ACCOUNT: ...800 
+- 5 ports: hadoop cluster port 14055-14059 to internal 14055-14059
+
+ACCOUNT: ...141 
+- 5 ports: hadoop cluster port 14060-14064 to internal 14060-14064
+
+ACCOUNT: ...915 
+- 5 ports: hadoop cluster port 14065-14069 to internal 14065-14069
+
+ACCOUNT: ...773 
+- 5 ports: hadoop cluster port 14070-14074 to internal 14070-14074
+
+ACCOUNT: ...306 
+- 5 ports: hadoop cluster port 14075-14079 to internal 14075-14079
+
+ACCOUNT: ...532 
+- 5 ports: hadoop cluster port 14080-14084 to internal 14080-14084
+
+ACCOUNT: ...417 
+- 5 ports: hadoop cluster port 14085-14089 to internal 14085-14089
+
+ACCOUNT: ...575 
+- 5 ports: hadoop cluster port 14090-14094 to internal 14090-14094
 
 
