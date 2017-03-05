@@ -9,6 +9,26 @@ Manuel J. Parra Royón (manuelparra@decsai.ugr.es) & José. M. Benítez Sánchez
 
 # Starting with HDFS
 
+![LogoHadoop](https://media.licdn.com/mpr/mpr/shrinknp_400_400/AAEAAQAAAAAAAAmBAAAAJDgzYjM0N2VkLWQ0ZTEtNDQ0Zi05ZWEzLWVjOTgyMjdlN2Y0MA.jpg)
+
+The Hadoop Distributed File System (HDFS) is a distributed file system designed to run on commodity hardware. It has many similarities with existing distributed file systems. However, the differences from other distributed file systems are significant. HDFS is highly fault-tolerant and is designed to be deployed on low-cost hardware. HDFS provides high throughput access to application data and is suitable for applications that have large data sets. HDFS relaxes a few POSIX requirements to enable streaming access to file system data. HDFS was originally built as infrastructure for the Apache Nutch web search engine project. HDFS is now an Apache Hadoop subproject. The project URL is http://hadoop.apache.org/hdfs/.
+
+![HDFS](http://www.glennklockwood.com/data-intensive/hadoop/hdfs-magic.png)
+
+HDFS has a master/slave architecture. An HDFS cluster consists of a single NameNode, a master server that manages the file system namespace and regulates access to files by clients. In addition, there are a number of DataNodes, usually one per node in the cluster, which manage storage attached to the nodes that they run on. HDFS exposes a file system namespace and allows user data to be stored in files. Internally, a file is split into one or more blocks and these blocks are stored in a set of DataNodes. The NameNode executes file system namespace operations like opening, closing, and renaming files and directories. It also determines the mapping of blocks to DataNodes. The DataNodes are responsible for serving read and write requests from the file system’s clients. The DataNodes also perform block creation, deletion, and replication upon instruction from the NameNode.
+
+
+![HDFS Arch](https://hadoop.apache.org/docs/r1.2.1/images/hdfsarchitecture.gif)
+
+**Data Replication**
+
+HDFS is designed to reliably store very large files across machines in a large cluster. It stores each file as a sequence of blocks; all blocks in a file except the last block are the same size. The blocks of a file are replicated for fault tolerance. The block size and replication factor are configurable per file. An application can specify the number of replicas of a file. The replication factor can be specified at file creation time and can be changed later. Files in HDFS are write-once and have strictly one writer at any time.
+
+
+![DataNodes](https://hadoop.apache.org/docs/r1.2.1/images/hdfsdatanodes.gif)
+
+
+
 
 ## Connecting to Hadoop Cluster UGR
 
