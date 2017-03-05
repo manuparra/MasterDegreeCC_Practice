@@ -1,12 +1,12 @@
-Máster Profesional Ingeniería de Computadores 2016-2017. Universidad de Granada.
+# Máster Profesional Ingeniería Informática. Prácticas de Cloud Computing. Curso 2016-2017. 
+
+![Header](https://sites.google.com/site/manuparra/home/headerdicits.png)
 
 Manuel J. Parra Royón (manuelparra@decsai.ugr.es) & José. M. Benítez Sánchez (j.m.benitez@decsai.ugr.es)
 
-Soft Computing and Intelligent Information Systems
+[UGR](http://www.ugr.es) | [DICITS](http://dicits.ugr.es) | [SCI2S](http://sci2s.ugr.es) | [DECSAI](http://decsai.ugr.es)
 
-Distributed Computational Intelligence and Time Series Lab
 
-University of Granada
 
 Table of Contents
 ==================

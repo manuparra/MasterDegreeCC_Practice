@@ -1,9 +1,10 @@
-![LogoHeadMasterCES](https://sites.google.com/site/manuparra/home/logo_master_ciber.png)
+# Máster Profesional Ingeniería Informática. Prácticas de Cloud Computing. Curso 2016-2017. 
 
-
-[UGR](http://www.ugr.es) | [DICITS](http://dicits.ugr.es) | [SCI2S](http://sci2s.ugr.es) | [DECSAI](http://decsai.ugr.es)
+![Header](https://sites.google.com/site/manuparra/home/headerdicits.png)
 
 Manuel J. Parra Royón (manuelparra@decsai.ugr.es) & José. M. Benítez Sánchez (j.m.benitez@decsai.ugr.es)
+
+[UGR](http://www.ugr.es) | [DICITS](http://dicits.ugr.es) | [SCI2S](http://sci2s.ugr.es) | [DECSAI](http://decsai.ugr.es)
 
 
 Table of Contents
