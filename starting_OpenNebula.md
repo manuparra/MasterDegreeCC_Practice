@@ -31,7 +31,12 @@ Table of Contents
 
 # Starting with OpenNebula
 
-## First steps with OpenNebula
+OpenNebula enable two ways of interaction:
+
+- Command line applications
+- Web Application
+
+## First steps with OpenNebula command line
 
 Firstly try to access to the docker ugr server:
 
