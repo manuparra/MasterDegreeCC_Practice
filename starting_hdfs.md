@@ -189,3 +189,9 @@ hdfs dfs -getmerge ./ merged.txt
 - Move part3, and part4 to /train/p1/
 - Finally merge folder /train/p2 and store as data_merged.txt
 
+
+# References:
+
+- http://www.glennklockwood.com/data-intensive/hadoop/overview.html
+
+
