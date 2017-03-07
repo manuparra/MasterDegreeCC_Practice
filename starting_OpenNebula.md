@@ -53,6 +53,19 @@ ssh mccXXXXXXX@docker....
 Use your previously changed password, when asked.
 
 
+**The first action when login is the next:**
+
+``
+oneuser login mccXXXXXXX —-ssh —-force
+``
+
+
+This command is very important, due to,  it creates the session with OpenNebula and it allows to use all commands on OpenNebula.
+
+
+
+
+
 **OpenNebula commands**:
 
 ```
