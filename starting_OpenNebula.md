@@ -238,15 +238,15 @@ onetemplate create --name "Plantilla_CentOS" --cpu 1 --vcpu 1 --memory 512 --arc
 
 Those are the parameters explained:
 
-- --name :   Indica el nombre plantilla a crear. Debe ser un texto identificativo de la MV a crear.
-- --cpu : El número de CPUS que vamos a utilizar. Debe ser un número entero.
- - --vcpu : El número de CPUs Virtuales que se utilizarán. Debe ser un número entero.
-- --memory : La memoria RAM en MB que se usará para la Maquina Virtual.
-- --arch:  La arquitectura que se va a usar. Debe estar en concordancia con la imagen que se 			utilizará; puede ser x86_64, x86, … 
-- --disk: El ID del disco o imagen que vamos a usar. El identificador de la lista se puede ver ver en  		oneimage list y puede ser un ID o bien el NOMBRE del disco.
-- --nic : El nombre de la RedVirtual que usaremos. El identificador se puede consultar utilizando el 		mandato onevnet list, desde donde se consulta el ID o NOMBRE de la RED a 			usar.
-- --ssh: acceso via ssh.
-- --net_context:   Usaremos el contextos para la imagen.
+- --name :   Name of the template to indentify on OpenNebula
+- --cpu : Number of CPUs. Integer.
+ - --vcpu : Number of Virtual CPUs: can be 0.5, 1, 1.5 .... etc.
+- --memory : RAM in MB, GB
+- --arch:  Architecture: x86_64, x86, … It should be the same than the image.
+- --disk: ID of the DISK. This ID can be searched from 		oneimage list command.
+- --nic : Name or ID of the VirtualNetwork
+- --ssh: Access from SSH.
+- --net_context: Network Context
 
 To verify if the template was created:
 
