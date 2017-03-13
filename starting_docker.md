@@ -27,6 +27,9 @@ Table of Contents
       * [A simple web server with NGINX](#a-simple-web-server-with-nginx)
          * [Enter in the nginx container:](#enter-in-the-nginx-container)
          * [Docker ports redirection](#docker-ports-redirection)
+      * [Creating a RStudio Data Science service](#creating-a-rstudio-data-science-service)
+         * [Status of your containers](#status-of-your-containers)
+         * [Example using RStudio Service with RSNNS](#example-using-rstudio-service-with-rsnns)
    * [ Review of docker commands](#review-of-docker-commands)
       * [Show docker Images](#show-docker-images)
       * [List of launched/running docker containers:](#list-of-launchedrunning-docker-containers)
@@ -217,7 +220,7 @@ Where ``container ID`` is the unique ID of your Container. You can use Container
 And now, go to your browser and write:
 
 ```
-http://docker.ugr.es:<yourport>/
+http://hadoop.ugr.es:<yourport>/
 ```
 
 ![nginxDocker](https://sites.google.com/site/manuparra/home/docker_nginx.png)
@@ -268,6 +271,172 @@ In addition each container can export several ports:
 ```
 docker run -d -p 12000:80 -p 12001:81   --name <name> <container>
 ```
+
+
+## Creating a RStudio Data Science service
+
+The first thing we need is to download the docker image from RStudio (on docker hub is: rocker), for them we check whether or not the image is in the list of available images:
+
+
+```
+docker images
+```
+
+If the image is not found locally, Docker will pull it from Docker Hub and you will use it:
+
+```
+docker pull rocker/rstudio
+```
+
+It will download the image of RStudio container. 
+
+And now you can see if image is on images repository using:
+
+```
+docker images
+```
+
+```
+REPOSITORY          TAG                 IMAGE ID            CREATED             VIRTUAL SIZE
+rocker/rstudio      latest              6a0886126390        13 hours ago        989.6 MB
+nginx               latest              00bba88663ff        8 days ago          181.8 MB...
+```
+
+Run the container, using the next syntax:
+
+```
+docker run -d -p <yourport>:<containerport> --name <mynameofcontainer> <container>
+```
+
+Wait, we need a few minutes to understand PORT assignment:
+
+![PortAsignmentRstudio](https://sites.google.com/site/manuparra/home/rstudio.png)
+
+About the options:
+
+``-d Run container in background and print container ID``
+
+``-p Publish a container's port(s) to the host``
+
+``--name Name of your contaniner i.e. 'containerofmanuparra'``
+
+``<container> This is the container that will be executed`` 
+
+So, before execute the next command we need:
+
+- One of your EXTERNAL PORT assigned (Look [here](README.md#dockerports))
+- Rstudio INTERNAL PORT (default: 8787)
+- The name of your "RStudio service"
+
+** Change test_rstudio to rstudio_myname**
+
+```
+docker run -d -p <yourassignedport>:8787 --name test_rstudio rocker/rstudio
+```
+
+In ``<yourassignedport>`` write your individually assigned port. See your ports [here](README.md#dockerports).
+
+To check if your container is runnig, show the status of all your container:
+
+### Status of your containers
+
+```
+docker ps
+```
+
+And it returns:
+
+```
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS                     NAMES
+6ff2fa0c41f3        rocker/rstudio      "/init"             4 seconds ago       Up 3 seconds        0.0.0.0:16001->8787/tcp   serene_bohr ...
+```
+
+Using:
+
+```
+docker ps -a
+```
+
+Will returns containers history (all):
+
+```
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                            NAMES
+52ad2efb9fff        nginx               "nginx -g 'daemon off"   12 minutes ago      Up 12 minutes       443/tcp, 0.0.0.0:14000->80/tcp   testnginx
+...
+```
+
+**IMPORTANT:** 
+
+Where ``container ID`` is the unique ID of your Container. You can use Container ID or NAMES to refer to your container. ``IMAGE`` is the name of the container image. ``PORTS`` show what is the correspondence of the ports between server and docker container.
+
+
+And now, go to your browser and write:
+
+```
+http://hadoop.ugr.es:<yourassignedport>/
+```
+
+Use default credentials to login Your Rstudio service: 
+
+```
+usename: rstudio 
+passwd: rstudio 
+```
+
+### Example using RStudio Service with RSNNS
+
+Try this code:
+
+- Install fpp package
+- Install rsnns package
+
+
+```
+######################################################################
+####FEED FORWARD NEURAL NETWORK - RSNNS PACKAGE#######################
+######################################################################
+
+# RSNNS no funciona con valores perdidos NA, luego para entrenar la red neuronal
+# habría que imputar o no entrenar los valores lageados con NA
+
+library(fpp)
+library(RSNNS)
+library(quantmod)
+
+plot(sunspotarea)
+
+#sunspotarea <- ts(scale(sunspotarea[1:length(sunspotarea)]),start=c(start(sunspotarea)[1],start(sunspotarea)[2]),end=c(end(sunspotarea)[1],end(sunspotarea)[2]))
+#sunspotarea <- (sunspotarea-min(sunspotarea))/(max(sunspotarea)-min(sunspotarea))
+sunspotarea <- ts(normalizeData(sunspotarea[1:length(sunspotarea)]),start=c(start(sunspotarea)[1],start(sunspotarea)[2]),end=c(end(sunspotarea)[1],end(sunspotarea)[2]))
+
+plot(sunspotarea)
+
+# ar(sunspotarea)$order   # nos dice de orden 9, luego 9 rezagos
+
+dat <- data.frame(sunspotarea[10:length(sunspotarea)], Lag(sunspotarea[1:length(sunspotarea)],1)[10:length(sunspotarea)], Lag(sunspotarea[1:length(sunspotarea)],2)[10:length(sunspotarea)],Lag(sunspotarea[1:length(sunspotarea)],3)[10:length(sunspotarea)], Lag(sunspotarea[1:length(sunspotarea)],4)[10:length(sunspotarea)], Lag(sunspotarea[1:length(sunspotarea)],5)[10:length(sunspotarea)], Lag(sunspotarea[1:length(sunspotarea)],6)[10:length(sunspotarea)], Lag(sunspotarea[1:length(sunspotarea)],7)[10:length(sunspotarea)], Lag(sunspotarea[1:length(sunspotarea)],8)[10:length(sunspotarea)], Lag(sunspotarea[1:length(sunspotarea)],9)[10:length(sunspotarea)]) # create with lagged values
+colnames(dat) <- c("y",paste0("Lag.", 1:(ncol(dat)-1)))
+head(dat)
+
+fit <- mlp(dat[2:length(dat)],dat[1],size=5,linOut=T)
+
+ps <- predict(fit, dat[2:length(dat)])
+
+# Examine results
+plot(time(sunspotarea)[1:length(sunspotarea)],sunspotarea[1:length(sunspotarea)],type="l",col = 2)
+lines(time(sunspotarea)[10:length(sunspotarea)],ps, col=3)
+
+
+# Prediction
+pred <- myPrediction(sunspotarea,fit,9,20,colnames(dat[2:length(dat)]),"rsnns")
+
+
+# Examine prediction
+plot(time(sunspotarea)[1:length(sunspotarea)],sunspotarea[1:length(sunspotarea)],type="l",xlim=c(min(time(sunspotarea)),max(max(time(sunspotarea))+20)),ylim=c(min(sunspotarea,pred),max(sunspotarea,pred)))
+lines(time(sunspotarea)[10:length(sunspotarea)],ps, col="red")
+lines(seq(max(time(sunspotarea)),max(time(sunspotarea))+20,length=20), pred, col="blue")
+
+```
+
 
 
 # Review of docker commands
