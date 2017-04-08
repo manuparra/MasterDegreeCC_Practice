@@ -69,6 +69,19 @@ Attention!! The HDFS storage space is different from the user's local storage sp
 hdfs dfs <options>
 ```
 
+or 
+
+
+```
+hadoop fs <options>
+```
+
+Check the following command to see all options:
+
+```
+hdfs dfs -help
+```
+
 Options are (simplified):
 
 ```
@@ -84,6 +97,8 @@ Options are (simplified):
 -put        Put a file from local to HDFS
 ```
 
+
+
 List the content of your HDFS folder:
 
 ```
@@ -96,7 +111,7 @@ Create a test file:
 echo “HOLA HDFS” > fichero.txt
 ```
 
-Move the loca file ``fichero.txt`` to HDFS:
+Move the local file ``fichero.txt`` to HDFS:
 
 ```
 hdfs dfs -put fichero.txt ./
@@ -170,11 +185,19 @@ hdfs dfs -put f1.txt
 hdfs dfs -put f2.txt
 ```
 
-Cocatenate both files:
+Cocatenate both files (this option is very usefull, because you will need merge the results of the Hadoop Algorithms  execution):
 
 ```
 hdfs dfs -getmerge ./ merged.txt
 ```
+
+Delete folder recursively:
+
+```
+hdfs dfs -rmr
+```
+
+
 
 ## Exercice
 
